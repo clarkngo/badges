@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clark — Digital Badges &amp; Certifications</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ───── Top Bar ───── -->
+  <header class="topbar">
+    <div class="topbar__left">
+      <h1 class="topbar__title">Digital Badges &amp; Certifications</h1>
+      <div class="topbar__stats">
+        <div class="stat">
+          <span class="stat__number" data-count="certifications">0</span>
+          <span class="stat__label">Certifications</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" data-count="courses">0</span>
+          <span class="stat__label">Courses</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" data-count="providers">0</span>
+          <span class="stat__label">Providers</span>
+        </div>
+      </div>
+    </div>
+    <nav class="topbar__filters" aria-label="Badge filters">
+      <div class="topbar__filter-btns">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="certification">Certifications</button>
+        <button class="filter-btn" data-filter="course">Courses</button>
+      </div>
+      <div class="filters__search">
+        <svg class="filters__search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" class="filters__search-input" placeholder="Search badges…" aria-label="Search badges" />
+      </div>
+    </nav>
+  </header>
+
+  <!-- ───── Certifications Section ───── -->
+  <section id="certifications" class="section">
+    <div class="section__header">
+      <div class="section__icon section__icon--cert">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-2 5 2-1.5L14 20l-2-5z"/><circle cx="12" cy="9" r="6"/><path d="m9 9 1.5 1.5L13.5 7"/></svg>
+      </div>
+      <div>
+        <h2 class="section__title">Professional Certifications</h2>
+        <p class="section__description">Industry-recognized credentials earned through proctored examination</p>
+      </div>
+    </div>
+    <div class="badge-grid" id="cert-grid">
+      <!-- populated by JS -->
+    </div>
+  </section>
+
+  <!-- ───── Courses Section ───── -->
+  <section id="courses" class="section">
+    <div class="section__header">
+      <div class="section__icon section__icon--course">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      </div>
+      <div>
+        <h2 class="section__title">Course Completions</h2>
+        <p class="section__description">Skills developed through online learning platforms and digital courses</p>
+      </div>
+    </div>
+    <div class="badge-grid" id="course-grid">
+      <!-- populated by JS -->
+    </div>
+  </section>
+
+  <!-- ───── Badge Detail Modal ───── -->
+  <div class="modal-overlay" id="modal" aria-hidden="true" role="dialog">
+    <div class="modal">
+      <button class="modal__close" aria-label="Close">&times;</button>
+      <div class="modal__badge-image" id="modal-image"></div>
+      <div class="modal__body">
+        <span class="modal__tier" id="modal-tier"></span>
+        <h3 class="modal__title" id="modal-title"></h3>
+        <p class="modal__issuer" id="modal-issuer"></p>
+        <p class="modal__desc" id="modal-desc"></p>
+        <div class="modal__meta">
+          <div class="modal__meta-item">
+            <span class="modal__meta-label">Credential ID</span>
+            <span class="modal__meta-value" id="modal-cred"></span>
+          </div>
+          <div class="modal__meta-item">
+            <span class="modal__meta-label">Skills</span>
+            <span class="modal__meta-value" id="modal-skills"></span>
+          </div>
+        </div>
+        <a class="modal__verify" id="modal-link" href="#" target="_blank" rel="noopener">Verify Credential ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───── Footer ───── -->
+  <footer class="footer">
+    <p>&copy; 2026 Clark. All badges and certifications are verifiable through their respective issuers.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
